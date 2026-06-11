@@ -5,7 +5,8 @@
   "en": "Czech Republic",
   "group": "A",
   "id": "133904",
-  "badge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png"
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png",
+  "espn": "Czechia"
  },
  "Mexico": {
   "wiki": "Mexico",
@@ -117,7 +118,8 @@
   "en": "Turkey",
   "group": "D",
   "id": "135985",
-  "badge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png"
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png",
+  "espn": "Türkiye"
  },
  "USA": {
   "wiki": "United States",
@@ -125,7 +127,8 @@
   "en": "United States",
   "group": "D",
   "id": "134514",
-  "badge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png"
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png",
+  "espn": "United States"
  },
  "Curaçao": {
   "wiki": "Curaçao",
@@ -333,7 +336,8 @@
   "en": "DR Congo",
   "group": "K",
   "id": "136475",
-  "badge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png"
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png",
+  "espn": "Congo DR"
  },
  "Portugal": {
   "wiki": "Portugal",
