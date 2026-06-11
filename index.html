@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mundial 2026 · Calendario, Resultados y Plantillas</title>
 <meta name="description" content="Copa Mundial de la FIFA 2026: partidos por día en hora de España, Bolivia y más países, resultados en vivo, clasificaciones y plantillas completas.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b1120">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mundial 2026">
 <link rel="preconnect" href="https://www.thesportsdb.com">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,6 +26,7 @@
     </div>
   </div>
   <div class="topbar-right">
+    <button id="installBtn" class="install-btn hidden">📲 <span data-i18n="installApp">Instalar app</span></button>
     <span id="liveIndicator" class="live-indicator hidden"><span class="dot"></span><span data-i18n="live">EN VIVO</span></span>
     <span id="updatedAt" class="updated-at"></span>
     <select id="langSelect" class="lang-select" aria-label="Idioma">
@@ -50,6 +58,11 @@
     <button class="modal-close" aria-label="Cerrar">✕</button>
     <div id="modalContent"></div>
   </div>
+</div>
+
+<div id="iosBanner" class="ios-banner hidden">
+  <span id="iosBannerText"></span>
+  <button id="iosBannerClose" aria-label="Cerrar">✕</button>
 </div>
 
 <footer class="footer">

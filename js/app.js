@@ -70,6 +70,8 @@ const I18N = {
       <p>¿Y si empatan? Se juega la <b>prórroga</b> (alargue): 2 tiempos extra de 15 minutos. ¿Siguen empatados? <b>Tanda de penales</b>: 5 disparos por equipo desde los 11 metros, y si persiste el empate, se patea de uno en uno hasta que alguien falle (muerte súbita).</p>
       <p>El camino: Dieciseisavos (32 equipos) → Octavos (16) → Cuartos (8) → Semifinales (4) → <b>la Final</b> 🏆 (los perdedores de las semis juegan por el tercer puesto).</p>`,
     learnIntro: '¿Primera vez siguiendo un Mundial? ¡Bienvenida! ⚽ Aquí te explicamos todo lo que necesitas para disfrutar cada partido, sin palabras raras. Toca cada tarjeta para abrirla.',
+    installApp: 'Instalar app',
+    iosHint: '📲 Para instalar esta app en tu iPhone/iPad: toca el botón <b>Compartir</b> <small>(el cuadrado con flecha)</small> y elige <b>"Añadir a pantalla de inicio"</b>.',
   },
   en: {
     title: 'World Cup 2026', subtitle: 'Canada · Mexico · United States',
@@ -118,6 +120,8 @@ const I18N = {
       <p>What if it is a draw? <b>Extra time</b> is played: two extra periods of 15 minutes. Still level? <b>Penalty shootout</b>: 5 kicks per team from 11 metres, and if still tied, one kick each until someone misses (sudden death).</p>
       <p>The road: Round of 32 → Round of 16 → Quarter-finals → Semi-finals → <b>the Final</b> 🏆 (the semi-final losers play for third place).</p>`,
     learnIntro: 'First time following a World Cup? Welcome! ⚽ Here we explain everything you need to enjoy every match, no jargon. Tap each card to open it.',
+    installApp: 'Install app',
+    iosHint: '📲 To install this app on your iPhone/iPad: tap the <b>Share</b> button <small>(the square with an arrow)</small> and choose <b>"Add to Home Screen"</b>.',
   },
 };
 
@@ -1116,10 +1120,51 @@ function bindEvents() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 }
 
+/* ---------------- PWA: instalación y modo sin conexión ---------------- */
+
+let deferredInstallPrompt = null;
+
+function setupPwa() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => { /* sin SW la app funciona igual */ });
+  }
+
+  const btn = $('#installBtn');
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    btn.classList.remove('hidden');
+  });
+  btn.addEventListener('click', async () => {
+    if (!deferredInstallPrompt) return;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    btn.classList.add('hidden');
+  });
+  window.addEventListener('appinstalled', () => {
+    btn.classList.add('hidden');
+    deferredInstallPrompt = null;
+  });
+
+  // iOS no dispara beforeinstallprompt: mostramos una pista una sola vez
+  const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  const inStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  if (isIos && !inStandalone && !localStorage.getItem('wc.iosHintDismissed')) {
+    $('#iosBannerText').innerHTML = t('iosHint');
+    $('#iosBanner').classList.remove('hidden');
+    $('#iosBannerClose').addEventListener('click', () => {
+      $('#iosBanner').classList.add('hidden');
+      localStorage.setItem('wc.iosHintDismissed', '1');
+    });
+  }
+}
+
 /* ---------------- Inicio ---------------- */
 
 async function init() {
   bindEvents();
+  setupPwa();
   applyI18nStatic();
   await loadStaticData();
   await loadMatches();
