@@ -1,0 +1,386 @@
+{
+ "Czech Republic": {
+  "wiki": "Czech Republic",
+  "es": "República Checa",
+  "en": "Czech Republic",
+  "group": "A",
+  "id": "133904",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/1o0cx31654205806.png"
+ },
+ "Mexico": {
+  "wiki": "Mexico",
+  "es": "México",
+  "en": "Mexico",
+  "group": "A",
+  "id": "134497",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/3rmosi1748525208.png"
+ },
+ "South Africa": {
+  "wiki": "South Africa",
+  "es": "Sudáfrica",
+  "en": "South Africa",
+  "group": "A",
+  "id": "136482",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/xjz9j91553368824.png"
+ },
+ "South Korea": {
+  "wiki": "South Korea",
+  "es": "Corea del Sur",
+  "en": "South Korea",
+  "group": "A",
+  "id": "134517",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/a8nqfs1589564916.png"
+ },
+ "Bosnia-Herzegovina": {
+  "wiki": "Bosnia and Herzegovina",
+  "es": "Bosnia y Herzegovina",
+  "en": "Bosnia and Herzegovina",
+  "group": "B",
+  "id": "134510",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/wtqqst1455463120.png"
+ },
+ "Canada": {
+  "wiki": "Canada",
+  "es": "Canadá",
+  "en": "Canada",
+  "group": "B",
+  "id": "140073",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/2t631f1595154867.png"
+ },
+ "Qatar": {
+  "wiki": "Qatar",
+  "es": "Catar",
+  "en": "Qatar",
+  "group": "B",
+  "id": "136472",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/rs3ir31642708685.png"
+ },
+ "Switzerland": {
+  "wiki": "Switzerland",
+  "es": "Suiza",
+  "en": "Switzerland",
+  "group": "B",
+  "id": "134506",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/mb7yqe1717365808.png"
+ },
+ "Brazil": {
+  "wiki": "Brazil",
+  "es": "Brasil",
+  "en": "Brazil",
+  "group": "C",
+  "id": "134496",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/jl6dip1726167280.png"
+ },
+ "Haiti": {
+  "wiki": "Haiti",
+  "es": "Haití",
+  "en": "Haiti",
+  "group": "C",
+  "id": "140175",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/gml8wx1598135302.png"
+ },
+ "Morocco": {
+  "wiki": "Morocco",
+  "es": "Marruecos",
+  "en": "Morocco",
+  "group": "C",
+  "id": "136139",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/hbmwkj1731791275.png"
+ },
+ "Scotland": {
+  "wiki": "Scotland",
+  "es": "Escocia",
+  "en": "Scotland",
+  "group": "C",
+  "id": "136450",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/3691i11552945146.png"
+ },
+ "Australia": {
+  "wiki": "Australia",
+  "es": "Australia",
+  "en": "Australia",
+  "group": "D",
+  "id": "134500",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/lark6k1661780848.png"
+ },
+ "Paraguay": {
+  "wiki": "Paraguay",
+  "es": "Paraguay",
+  "en": "Paraguay",
+  "group": "D",
+  "id": "136471",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/khgav41553419195.png"
+ },
+ "Turkey": {
+  "wiki": "Turkey",
+  "es": "Turquía",
+  "en": "Turkey",
+  "group": "D",
+  "id": "135985",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/70c4oo1591982459.png"
+ },
+ "USA": {
+  "wiki": "United States",
+  "es": "Estados Unidos",
+  "en": "United States",
+  "group": "D",
+  "id": "134514",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/21f0oi1597948195.png"
+ },
+ "Curaçao": {
+  "wiki": "Curaçao",
+  "es": "Curazao",
+  "en": "Curaçao",
+  "group": "E",
+  "id": "140271",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/itygvb1600955363.png"
+ },
+ "Ecuador": {
+  "wiki": "Ecuador",
+  "es": "Ecuador",
+  "en": "Ecuador",
+  "group": "E",
+  "id": "134507",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/47wv2y1591989301.png"
+ },
+ "Germany": {
+  "wiki": "Germany",
+  "es": "Alemania",
+  "en": "Germany",
+  "group": "E",
+  "id": "133907",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/1xysi51726167152.png"
+ },
+ "Ivory Coast": {
+  "wiki": "Ivory Coast",
+  "es": "Costa de Marfil",
+  "en": "Ivory Coast",
+  "group": "E",
+  "id": "134502",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/rwxuuu1455465643.png"
+ },
+ "Japan": {
+  "wiki": "Japan",
+  "es": "Japón",
+  "en": "Japan",
+  "group": "F",
+  "id": "134503",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/ffsyxz1591989843.png"
+ },
+ "Netherlands": {
+  "wiki": "Netherlands",
+  "es": "Países Bajos",
+  "en": "Netherlands",
+  "group": "F",
+  "id": "133905",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/1p0hr41593787110.png"
+ },
+ "Sweden": {
+  "wiki": "Sweden",
+  "es": "Suecia",
+  "en": "Sweden",
+  "group": "F",
+  "id": "133916",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/h5adzg1591981772.png"
+ },
+ "Tunisia": {
+  "wiki": "Tunisia",
+  "es": "Túnez",
+  "en": "Tunisia",
+  "group": "F",
+  "id": "136142",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/7r89rg1526727277.png"
+ },
+ "Belgium": {
+  "wiki": "Belgium",
+  "es": "Bélgica",
+  "en": "Belgium",
+  "group": "G",
+  "id": "134515",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/8xlvxv1592062265.png"
+ },
+ "Egypt": {
+  "wiki": "Egypt",
+  "es": "Egipto",
+  "en": "Egypt",
+  "group": "G",
+  "id": "136138",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/uheyzo1742102234.png"
+ },
+ "Iran": {
+  "wiki": "Iran",
+  "es": "Irán",
+  "en": "Iran",
+  "group": "G",
+  "id": "134511",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/uttpvw1455465617.png"
+ },
+ "New Zealand": {
+  "wiki": "New Zealand",
+  "es": "Nueva Zelanda",
+  "en": "New Zealand",
+  "group": "G",
+  "id": "137449",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/91xpk81742982935.png"
+ },
+ "Cape Verde": {
+  "wiki": "Cape Verde",
+  "es": "Cabo Verde",
+  "en": "Cape Verde",
+  "group": "H",
+  "id": "136477",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/5jn0o71593280376.png"
+ },
+ "Saudi Arabia": {
+  "wiki": "Saudi Arabia",
+  "es": "Arabia Saudita",
+  "en": "Saudi Arabia",
+  "group": "H",
+  "id": "136137",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/24xwpq1594125742.png"
+ },
+ "Spain": {
+  "wiki": "Spain",
+  "es": "España",
+  "en": "Spain",
+  "group": "H",
+  "id": "133909",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/ncgqyr1726166942.png"
+ },
+ "Uruguay": {
+  "wiki": "Uruguay",
+  "es": "Uruguay",
+  "en": "Uruguay",
+  "group": "H",
+  "id": "134504",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/6vjbr11726167756.png"
+ },
+ "France": {
+  "wiki": "France",
+  "es": "Francia",
+  "en": "France",
+  "group": "I",
+  "id": "133913",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/p3n0z51726166851.png"
+ },
+ "Iraq": {
+  "wiki": "Iraq",
+  "es": "Irak",
+  "en": "Iraq",
+  "group": "I",
+  "id": "140148",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/aqidfn1742100110.png"
+ },
+ "Norway": {
+  "wiki": "Norway",
+  "es": "Noruega",
+  "en": "Norway",
+  "group": "I",
+  "id": "136516",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/gyfn811591973155.png"
+ },
+ "Senegal": {
+  "wiki": "Senegal",
+  "es": "Senegal",
+  "en": "Senegal",
+  "group": "I",
+  "id": "136143",
+  "badge": "https://www.thesportsdb.com/images/media/team/badge/slayb01780546342.png"
+ },
+ "Algeria": {
+  "wiki": "Algeria",
+  "es": "Argelia",
+  "en": "Algeria",
+  "group": "J",
+  "id": "134516",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/rrwpry1455460218.png"
+ },
+ "Argentina": {
+  "wiki": "Argentina",
+  "es": "Argentina",
+  "en": "Argentina",
+  "group": "J",
+  "id": "134509",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/3zplhu1726167477.png"
+ },
+ "Austria": {
+  "wiki": "Austria",
+  "es": "Austria",
+  "en": "Austria",
+  "group": "J",
+  "id": "135986",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/874p631628721400.png"
+ },
+ "Jordan": {
+  "wiki": "Jordan",
+  "es": "Jordania",
+  "en": "Jordan",
+  "group": "J",
+  "id": "140145",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/59fo2s1742100034.png"
+ },
+ "Colombia": {
+  "wiki": "Colombia",
+  "es": "Colombia",
+  "en": "Colombia",
+  "group": "K",
+  "id": "134501",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/4ymyku1691180081.png"
+ },
+ "DR Congo": {
+  "wiki": "DR Congo",
+  "es": "RD del Congo",
+  "en": "DR Congo",
+  "group": "K",
+  "id": "136475",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/s85jjw1728749022.png"
+ },
+ "Portugal": {
+  "wiki": "Portugal",
+  "es": "Portugal",
+  "en": "Portugal",
+  "group": "K",
+  "id": "133908",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/swqvpy1455466083.png"
+ },
+ "Uzbekistan": {
+  "wiki": "Uzbekistan",
+  "es": "Uzbekistán",
+  "en": "Uzbekistan",
+  "group": "K",
+  "id": "140151",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/u5bgze1597943605.png"
+ },
+ "Croatia": {
+  "wiki": "Croatia",
+  "es": "Croacia",
+  "en": "Croatia",
+  "group": "L",
+  "id": "133912",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/vvtsyu1455465317.png"
+ },
+ "England": {
+  "wiki": "England",
+  "es": "Inglaterra",
+  "en": "England",
+  "group": "L",
+  "id": "133914",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/vf5ttc1726166739.png"
+ },
+ "Ghana": {
+  "wiki": "Ghana",
+  "es": "Ghana",
+  "en": "Ghana",
+  "group": "L",
+  "id": "134513",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/j589xw1751526124.png"
+ },
+ "Panama": {
+  "wiki": "Panama",
+  "es": "Panamá",
+  "en": "Panama",
+  "group": "L",
+  "id": "136141",
+  "badge": "https://r2.thesportsdb.com/images/media/team/badge/asp2ck1715849700.png"
+ }
+}
