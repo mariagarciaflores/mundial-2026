@@ -59,7 +59,7 @@ const I18N = {
     expET: '⏱️ Este partido se fue a la prórroga (alargue): como había empate al final de los 90 minutos, se jugaron 2 tiempos extra de 15 minutos cada uno.',
     expShootout: '⚪ Tanda de penales: como el empate siguió tras la prórroga, cada equipo pateó penales por turnos para decidir al ganador.',
     shootoutLabel: 'Penales',
-    eduBanner: '¿Nueva en el fútbol? En la pestaña <b>🎓 Aprende</b> te explicamos las reglas, las tarjetas y los penales de forma súper sencilla.',
+    eduBanner: '¿Es tu primera vez viendo fútbol? En la pestaña <b>🎓 Aprende</b> te explicamos las reglas, las tarjetas y los penales de forma súper sencilla.',
     goLearn: 'Ir a Aprende',
     groupsExplainerTitle: '🎓 ¿Cómo funciona la clasificación? (explicación sencilla)',
     groupsExplainerBody: `<p>Cada equipo juega <b>3 partidos</b> contra los otros de su grupo, y gana puntos así:</p>
@@ -71,7 +71,7 @@ const I18N = {
     koExplainerBody: `<p>Se acabaron los grupos: ahora es <b>a partido único</b>. El que gana avanza y el que pierde se va a casa. 🏠</p>
       <p>¿Y si empatan? Se juega la <b>prórroga</b> (alargue): 2 tiempos extra de 15 minutos. ¿Siguen empatados? <b>Tanda de penales</b>: 5 disparos por equipo desde los 11 metros, y si persiste el empate, se patea de uno en uno hasta que alguien falle (muerte súbita).</p>
       <p>El camino: Dieciseisavos (32 equipos) → Octavos (16) → Cuartos (8) → Semifinales (4) → <b>la Final</b> 🏆 (los perdedores de las semis juegan por el tercer puesto).</p>`,
-    learnIntro: '¿Primera vez siguiendo un Mundial? ¡Bienvenida! ⚽ Aquí te explicamos todo lo que necesitas para disfrutar cada partido, sin palabras raras. Toca cada tarjeta para abrirla.',
+    learnIntro: '¿Primera vez siguiendo un Mundial? ¡Te damos la bienvenida! ⚽ Aquí te explicamos todo lo que necesitas para disfrutar cada partido, sin palabras raras. Toca cada tarjeta para abrirla.',
     newBadge: 'NUEVO',
     newRulesTitle: 'Las nuevas reglas del Mundial 2026',
     newRulesIntro: 'La FIFA y la IFAB aprobaron estos cambios al reglamento (en vigor desde julio de 2025) y este es el primer Mundial que los estrena. ¡Varios cambian cómo se ven los partidos!',
