@@ -315,6 +315,7 @@ const FT_STATUSES = new Set(['FT', 'AET', 'PEN', 'AP', 'FIN', 'MATCH FINISHED', 
 
 const state = {
   lang: localStorage.getItem('wc.lang') || 'es',
+  theme: localStorage.getItem('wc.theme') || 'dark',
   view: 'matches',
   selectedDate: null,
   selectedTeam: null,
@@ -672,6 +673,20 @@ async function openMatchModal(idEvent) {
       </div>
     </div>`).join('')}</div>`;
   box.innerHTML = html;
+}
+
+/* ---------------- Tema claro / oscuro ---------------- */
+
+function applyTheme(theme) {
+  document.documentElement.classList.toggle('light', theme === 'light');
+  const btn = $('#themeToggle');
+  if (btn) btn.textContent = theme === 'light' ? '🌙' : '☀️';
+}
+
+function toggleTheme() {
+  state.theme = state.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('wc.theme', state.theme);
+  applyTheme(state.theme);
 }
 
 /* ---------------- Render: barra superior ---------------- */
@@ -1120,6 +1135,8 @@ function bindEvents() {
     if (e.target.closest('.modal-close') || e.target.classList.contains('modal-backdrop')) closeModal();
   });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  $('#themeToggle').addEventListener('click', toggleTheme);
 }
 
 /* ---------------- PWA: instalación y modo sin conexión ---------------- */
@@ -1165,6 +1182,7 @@ function setupPwa() {
 /* ---------------- Inicio ---------------- */
 
 async function init() {
+  applyTheme(state.theme);
   bindEvents();
   setupPwa();
   applyI18nStatic();
