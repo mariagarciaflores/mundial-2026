@@ -2,13 +2,14 @@
    Estrategia: red primero con respaldo en caché (la app siempre muestra datos
    frescos cuando hay conexión y sigue funcionando sin internet con lo último visto). */
 
-const CACHE = 'mundial2026-v1';
+const VERSION = '20260612';
+const CACHE = `mundial2026-${VERSION}`;
 
 const SHELL = [
   './',
   'index.html',
-  'css/style.css',
-  'js/app.js',
+  `css/style.css?v=${VERSION}`,
+  `js/app.js?v=${VERSION}`,
   'data/teams.json',
   'data/squads.json',
   'data/schedule-fallback.json',
@@ -18,7 +19,12 @@ const SHELL = [
 ];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // cache:'reload' evita precargar copias rancias desde el caché HTTP del navegador
+  e.waitUntil(
+    caches.open(CACHE)
+      .then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', (e) => {
