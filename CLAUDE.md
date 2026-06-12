@@ -12,3 +12,12 @@ World Cup 2026 tracker (static PWA). Hosted on Firebase Hosting: https://mundial
 3. JS/CSS/HTML are served with `no-cache` headers via `firebase.json`, so regular browsers revalidate automatically — the `?v=` bump is for the service worker cache.
 
 Git pushes go to github.com/mariagarciaflores/mundial-2026 (credential username `mariagarciaflores`, ONE g).
+
+## Analytics
+
+Firebase Analytics config is injected at runtime via Hosting reserved URLs
+(`/__/firebase/init.js`) — **never commit firebaseConfig/apiKey to the repo**.
+If project settings change (e.g. Google Analytics link), run a redeploy:
+`init.js` only picks up config changes after `firebase deploy --only hosting`.
+Custom events are logged through the guarded `track()` helper in `js/app.js`
+(no-op on localhost where the reserved URLs 404).
