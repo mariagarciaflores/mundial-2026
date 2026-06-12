@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /data/squads.json
 
-Sitemap: https://mundial2026.app/sitemap.xml
+Sitemap: https://mundial-2026-mg.web.app/sitemap.xml
