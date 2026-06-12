@@ -366,6 +366,90 @@ details.explainer .exp-body ul { margin: 8px 0; padding-left: 20px; }
   background: var(--bg-soft); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0;
   padding: 8px 12px; font-size: .84rem; color: var(--text-dim); margin-top: 10px;
 }
+.learn-sec {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 1.15rem; font-weight: 800; margin: 28px 0 6px; color: var(--text);
+}
+.new-badge {
+  background: var(--live); color: #fff; font-size: .6rem; font-weight: 800;
+  letter-spacing: .1em; padding: 3px 9px; border-radius: 999px; flex: 0 0 auto;
+  animation: new-badge-pulse 2.2s ease-in-out infinite;
+}
+@keyframes new-badge-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+.learn-card.new-rule { border-left: 3px solid var(--live); }
+.learn-card.new-rule[open] { border-color: var(--live); border-left-width: 3px; }
+
+/* ===== Vista Cancha (campo interactivo) ===== */
+.field-view { padding: 20px 16px 32px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.field-svg-wrap { width: 100%; max-width: 560px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,.45); }
+.field-svg { display: block; width: 100%; height: auto; }
+.fz-pills {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  max-width: 560px; width: 100%;
+}
+.fz-pill {
+  padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text); cursor: pointer;
+  font-size: .84rem; font-weight: 600; transition: all .18s; white-space: nowrap;
+}
+.fz-pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.fz-pill.active { font-weight: 700; }
+.fz-info {
+  max-width: 560px; width: 100%;
+  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 18px 20px; animation: fadeIn .2s ease;
+}
+.fz-info-title { font-size: 1.05rem; font-weight: 800; margin: 0 0 10px; }
+.fz-info-body { font-size: .92rem; color: var(--text-dim); line-height: 1.75; margin: 0; }
+.fz-hint { color: var(--text-dim); font-size: .92rem; text-align: center; padding: 8px 0; }
+
+/* ===== Animaciones de la cancha ===== */
+.fs-goalflash, .fs-goaltext { opacity: 0; animation: fs-goalpop 6s linear infinite; }
+.fs-goaltext { font-weight: 800; }
+.fse-goal { animation-name: fse-goalpop; }
+.fso-mark { opacity: 0; animation: fso-mark 6s linear infinite; }
+.fso-ball { animation: fso-ball 6s ease-in-out infinite; }
+.fsp-shooter { animation: fsp-shooter 6s ease-in-out infinite; }
+.fsp-ball { animation: fsp-ball 6s ease-in-out infinite; }
+.fsp-gk { animation: fsp-gk 6s ease-in-out infinite; }
+.fsg-shooter { animation: fsg-shooter 6s ease-in-out infinite; }
+.fsg-ball { animation: fsg-ball 6s ease-in-out infinite; }
+.fsg-gk { animation: fsg-gk 6s ease-in-out infinite; }
+.fsm-gk { animation: fsm-gk 6s ease-in-out infinite; }
+.fsm-ball { animation: fsm-ball 6s ease-in-out infinite; }
+.fsa-ball { animation: fsa-ball 6s ease-in-out infinite; }
+.fsa-gk { animation: fsa-gk 6s ease-in-out infinite; }
+.fsa-hand { opacity: 0; animation: fsa-hand 6s linear infinite; }
+.fsc-a { animation: fsc-a 6s ease-in-out infinite; }
+.fsc-ball { animation: fsc-ball 6s ease-in-out infinite; }
+.fsb-ball1 { animation: fsb-ball1 6s linear infinite; }
+.fsb-ball2 { opacity: 0; animation: fsb-ball2 6s linear infinite; }
+.fse-ball { animation: fse-ball 6s ease-in-out infinite; }
+.fse-att { animation: fse-att 6s ease-in-out infinite; }
+
+@keyframes fs-goalpop { 0%, 55% { opacity: 0; } 63%, 90% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes fse-goalpop { 0%, 78% { opacity: 0; } 84%, 96% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes fso-ball { 0%, 30% { transform: translate(0, 0); } 45%, 100% { transform: translate(100px, -43px); } }
+@keyframes fso-mark { 0%, 50% { opacity: 0; } 58%, 90% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes fsp-shooter { 0%, 20% { transform: translate(0, 0); } 32%, 100% { transform: translate(12px, -9px); } }
+@keyframes fsp-ball { 0%, 35% { transform: translate(0, 0); } 48%, 100% { transform: translate(43px, -9px); } }
+@keyframes fsp-gk { 0%, 38% { transform: translate(0, 0); } 52%, 100% { transform: translate(3px, 17px); } }
+@keyframes fsg-shooter { 0%, 22% { transform: translate(0, 0); } 32%, 100% { transform: translate(6px, -5px); } }
+@keyframes fsg-ball { 0%, 30% { transform: translate(0, 0); } 42% { transform: translate(38px, -14px); } 52%, 100% { transform: translate(61px, -22px); } }
+@keyframes fsg-gk { 0%, 45% { transform: translate(0, 0); } 58%, 100% { transform: translate(-4px, -12px); } }
+@keyframes fsm-gk { 0%, 22% { transform: translate(0, 0); } 32%, 100% { transform: translate(-7px, -5px); } }
+@keyframes fsm-ball { 0%, 32% { transform: translate(0, 0); } 48% { transform: translate(-45px, -42px); } 62%, 100% { transform: translate(-95px, -48px); } }
+@keyframes fsa-ball { 0%, 25% { transform: translate(0, 0); } 45% { transform: translate(56px, 52px); } 58%, 100% { transform: translate(76px, 84px); } }
+@keyframes fsa-gk { 0%, 35% { transform: translate(0, 0); } 55%, 100% { transform: translate(-21px, -3px); } }
+@keyframes fsa-hand { 0%, 60% { opacity: 0; } 68%, 92% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes fsc-a { 0%, 20% { transform: translate(0, 0); } 30%, 100% { transform: translate(-4px, 4px); } }
+@keyframes fsc-ball { 0%, 32% { transform: translate(0, 0); } 46%, 100% { transform: translate(-16px, 17px); } }
+@keyframes fsb-ball1 { 0%, 12% { transform: translate(0, 0); opacity: 1; } 24% { transform: translate(12px, -50px); opacity: 1; } 28%, 100% { transform: translate(12px, -50px); opacity: 0; } }
+@keyframes fsb-ball2 { 0%, 42% { transform: translate(0, 0); opacity: 0; } 48% { transform: translate(0, 0); opacity: 1; } 62%, 100% { transform: translate(30px, 42px); opacity: 1; } }
+@keyframes fse-ball { 0%, 25% { transform: translate(0, 0); } 42% { transform: translate(-30px, 60px); } 52% { transform: translate(-39px, 77px); } 64% { transform: translate(-39px, 77px); } 78%, 100% { transform: translate(1px, 120px); } }
+@keyframes fse-att { 0%, 48% { transform: translate(0, 0); } 54% { transform: translate(0, -7px); } 60%, 100% { transform: translate(0, 0); } }
+
+@media (prefers-reduced-motion: reduce) { .fs * { animation: none !important; } }
 
 /* ===== Instalación PWA ===== */
 .install-btn {

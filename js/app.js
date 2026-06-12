@@ -43,7 +43,8 @@ const I18N = {
     footerRepo: 'Código en GitHub',
     thTeam: 'Equipo', winner: 'Ganador',
     tzLocal: 'Tu hora local', tzAddPlaceholder: '+ Añadir país…',
-    tabLearn: '🎓 Aprende',
+    tabLearn: '🎓 Aprende', tabField: '🏟️ Cancha',
+    fieldHint: 'Toca una zona para aprender sobre ella',
     detailHint: 'Toca para ver goles y tarjetas →',
     tlTitle: 'Minuto a minuto', tlEmpty: 'Aún no hay incidencias registradas para este partido.',
     tlNotStarted: 'El partido todavía no comienza. Aquí aparecerán los goles, tarjetas y penales cuando se juegue.',
@@ -71,6 +72,10 @@ const I18N = {
       <p>¿Y si empatan? Se juega la <b>prórroga</b> (alargue): 2 tiempos extra de 15 minutos. ¿Siguen empatados? <b>Tanda de penales</b>: 5 disparos por equipo desde los 11 metros, y si persiste el empate, se patea de uno en uno hasta que alguien falle (muerte súbita).</p>
       <p>El camino: Dieciseisavos (32 equipos) → Octavos (16) → Cuartos (8) → Semifinales (4) → <b>la Final</b> 🏆 (los perdedores de las semis juegan por el tercer puesto).</p>`,
     learnIntro: '¿Primera vez siguiendo un Mundial? ¡Bienvenida! ⚽ Aquí te explicamos todo lo que necesitas para disfrutar cada partido, sin palabras raras. Toca cada tarjeta para abrirla.',
+    newBadge: 'NUEVO',
+    newRulesTitle: 'Las nuevas reglas del Mundial 2026',
+    newRulesIntro: 'La FIFA y la IFAB aprobaron estos cambios al reglamento (en vigor desde julio de 2025) y este es el primer Mundial que los estrena. ¡Varios cambian cómo se ven los partidos!',
+    classicRulesTitle: '📚 Las reglas de siempre',
     installApp: 'Instalar app',
     iosHint: '📲 Para instalar esta app en tu iPhone/iPad: toca el botón <b>Compartir</b> <small>(el cuadrado con flecha)</small> y elige <b>"Añadir a pantalla de inicio"</b>.',
   },
@@ -94,7 +99,8 @@ const I18N = {
     footerRepo: 'Source code on GitHub',
     thTeam: 'Team', winner: 'Winner',
     tzLocal: 'Your local time', tzAddPlaceholder: '+ Add country…',
-    tabLearn: '🎓 Learn',
+    tabLearn: '🎓 Learn', tabField: '🏟️ Pitch',
+    fieldHint: 'Tap a zone to learn about it',
     detailHint: 'Tap to see goals and cards →',
     tlTitle: 'Minute by minute', tlEmpty: 'No incidents recorded for this match yet.',
     tlNotStarted: 'The match has not started yet. Goals, cards and penalties will appear here once it is played.',
@@ -122,12 +128,93 @@ const I18N = {
       <p>What if it is a draw? <b>Extra time</b> is played: two extra periods of 15 minutes. Still level? <b>Penalty shootout</b>: 5 kicks per team from 11 metres, and if still tied, one kick each until someone misses (sudden death).</p>
       <p>The road: Round of 32 → Round of 16 → Quarter-finals → Semi-finals → <b>the Final</b> 🏆 (the semi-final losers play for third place).</p>`,
     learnIntro: 'First time following a World Cup? Welcome! ⚽ Here we explain everything you need to enjoy every match, no jargon. Tap each card to open it.',
+    newBadge: 'NEW',
+    newRulesTitle: 'The new rules of World Cup 2026',
+    newRulesIntro: 'FIFA and IFAB approved these rule changes (in force since July 2025) and this is the first World Cup to use them. Several change how matches look!',
+    classicRulesTitle: '📚 The classic rules',
     installApp: 'Install app',
     iosHint: '📲 To install this app on your iPhone/iPad: tap the <b>Share</b> button <small>(the square with an arrow)</small> and choose <b>"Add to Home Screen"</b>.',
   },
 };
 
 /* ---------------- Contenido educativo (pestaña Aprende) ---------------- */
+
+const NEW_RULES = {
+  es: [
+    { emoji: '🧤', title: 'El portero solo tiene 8 segundos', body: `
+      <p>El portero solo puede retener el balón con las manos durante <span class="hl">8 segundos</span>. El árbitro le avisa contando los últimos 5 con la mano en alto.</p>
+      <p><b>¿Y si se pasa?</b> ¡<span class="hl">Córner</span> para el rival! Antes el límite era de 6 segundos pero casi nunca se sancionaba; ahora el castigo es tan grande que los porteros sueltan el balón rapidito.</p>
+      <div class="learn-tip">💡 Fíjate en los árbitros haciendo la cuenta regresiva con la mano: 5, 4, 3…</div>` },
+    { emoji: '🎯', title: 'Penales: la regla del doble toque', body: `
+      <p>Si el lanzador toca el balón <b>dos veces sin querer</b> (por ejemplo, resbala y lo roza con ambos pies) y marca gol, el penal <span class="hl">se repite</span>.</p>
+      <p>Si el doble toque es <b>a propósito</b>, no hay segunda oportunidad: tiro libre indirecto para el rival y, en una tanda de penales, cuenta como fallado.</p>
+      <div class="learn-tip">💡 Esta regla nació por un penal de Julián Álvarez en 2025: marcó, pero se lo anularon por tocar el balón con los dos pies al resbalar. Tras la polémica, la IFAB cambió la regla.</div>` },
+    { emoji: '🤾', title: '5 segundos para sacar de banda', body: `
+      <p>¿Un equipo se toma su tiempo a propósito para sacar de banda? El árbitro inicia una <span class="hl">cuenta regresiva de 5 segundos</span>.</p>
+      <p>Si no saca a tiempo, el saque <b>pasa al equipo rival</b>. Adiós a perder tiempo con el marcador a favor.</p>` },
+    { emoji: '🔄', title: 'Sustituciones exprés: 10 segundos', body: `
+      <p>El jugador sustituido tiene <span class="hl">10 segundos</span> para salir del campo <b>por el punto más cercano</b>, ya no caminando lento hasta el banquillo.</p>
+      <p>Si tarda más, su reemplazo no puede entrar hasta la siguiente pausa y el equipo se queda momentáneamente con uno menos.</p>` },
+    { emoji: '🚑', title: 'Un minuto fuera tras atención médica', body: `
+      <p>Si un jugador recibe atención médica dentro del campo y el juego se detiene por ello, debe quedarse <span class="hl">1 minuto fuera</span> antes de poder volver.</p>
+      <p>El objetivo: que nadie finja lesiones para enfriar el partido o perder tiempo.</p>` },
+    { emoji: '📺', title: 'El VAR ahora revisa más cosas', body: `
+      <p>El VAR ya podía revisar goles, penales, rojas directas y confusiones de identidad. Ahora también puede corregir:</p>
+      <ul>
+        <li>La <b>segunda amarilla</b> que termina en expulsión, si fue un error claro</li>
+        <li>Un <b>córner mal concedido</b>, si se puede revisar rápido antes de ejecutarse</li>
+      </ul>` },
+    { emoji: '🟨', title: 'Borrón y cuenta nueva de amarillas', body: `
+      <p>Las tarjetas amarillas acumuladas <span class="hl">se borran al terminar la fase de grupos</span>, y se vuelven a borrar después de los cuartos de final.</p>
+      <p>Así ningún jugador se pierde los octavos o la semifinal por amarillas sueltas de partidos anteriores.</p>` },
+    { emoji: '💧', title: 'Pausas de hidratación', body: `
+      <p>Cuando haga calor, el árbitro parará el juego alrededor del <span class="hl">minuto 22 de cada tiempo</span> para que los jugadores beban agua.</p>
+      <p>Muy importante en este Mundial: es verano en Canadá, México y Estados Unidos y varios partidos se juegan a mediodía.</p>` },
+    { emoji: '🤬', title: 'Más motivos de expulsión', body: `
+      <p>Dos conductas que ahora pueden costar <span class="tag-r">🟥 roja</span>:</p>
+      <ul>
+        <li><b>Taparse la boca</b> al encarar a un rival con ánimo de confrontación (para que no se lea lo que dice)</li>
+        <li><b>Salir del campo en señal de protesta</b> contra una decisión del árbitro</li>
+      </ul>` },
+  ],
+  en: [
+    { emoji: '🧤', title: 'Goalkeepers only get 8 seconds', body: `
+      <p>The goalkeeper may hold the ball with their hands for only <span class="hl">8 seconds</span>. The referee warns them by counting the last 5 with a raised hand.</p>
+      <p><b>What if they exceed it?</b> A <span class="hl">corner kick</span> for the opponent! The old limit was 6 seconds but was almost never enforced; now the punishment is so big that keepers release the ball quickly.</p>
+      <div class="learn-tip">💡 Watch for referees counting down with their hand: 5, 4, 3…</div>` },
+    { emoji: '🎯', title: 'Penalties: the double-touch rule', body: `
+      <p>If the kicker touches the ball <b>twice by accident</b> (for example, slipping and grazing it with both feet) and scores, the penalty is <span class="hl">retaken</span>.</p>
+      <p>If the double touch is <b>deliberate</b>, there is no second chance: indirect free kick for the opponent and, in a shootout, it counts as a miss.</p>
+      <div class="learn-tip">💡 This rule was born from a Julián Álvarez penalty in 2025: he scored, but it was disallowed for touching the ball with both feet as he slipped. After the controversy, IFAB changed the rule.</div>` },
+    { emoji: '🤾', title: '5 seconds for throw-ins', body: `
+      <p>Is a team deliberately taking its time on a throw-in? The referee starts a <span class="hl">5-second countdown</span>.</p>
+      <p>If the throw is not taken in time, possession <b>passes to the opponent</b>. Goodbye to time-wasting while ahead.</p>` },
+    { emoji: '🔄', title: 'Express substitutions: 10 seconds', body: `
+      <p>The substituted player has <span class="hl">10 seconds</span> to leave the field <b>at the nearest point</b> — no more slow walks to the bench.</p>
+      <p>If they take longer, their replacement cannot enter until the next stoppage and the team is briefly down a player.</p>` },
+    { emoji: '🚑', title: 'One minute off after treatment', body: `
+      <p>If a player receives medical attention on the pitch and play is stopped for it, they must stay <span class="hl">off for 1 minute</span> before returning.</p>
+      <p>The goal: nobody fakes injuries to cool the match down or waste time.</p>` },
+    { emoji: '📺', title: 'VAR now reviews more', body: `
+      <p>VAR could already review goals, penalties, straight red cards and mistaken identity. Now it can also correct:</p>
+      <ul>
+        <li>A <b>second yellow card</b> leading to a sending-off, if it was a clear error</li>
+        <li>A <b>wrongly awarded corner</b>, if it can be reviewed quickly before it is taken</li>
+      </ul>` },
+    { emoji: '🟨', title: 'Yellow cards wiped clean', body: `
+      <p>Accumulated yellow cards <span class="hl">are wiped after the group stage</span>, and wiped again after the quarter-finals.</p>
+      <p>This way no player misses the round of 16 or the semi-final because of stray yellows from earlier matches.</p>` },
+    { emoji: '💧', title: 'Cooling breaks', body: `
+      <p>In hot weather, the referee will stop play around the <span class="hl">22nd minute of each half</span> so players can hydrate.</p>
+      <p>Very relevant at this World Cup: it is summer in Canada, Mexico and the United States and several matches kick off at midday.</p>` },
+    { emoji: '🤬', title: 'New ways to get sent off', body: `
+      <p>Two behaviours that can now earn a <span class="tag-r">🟥 red card</span>:</p>
+      <ul>
+        <li><b>Covering your mouth</b> while confronting an opponent (so no one can read what is being said)</li>
+        <li><b>Leaving the field in protest</b> against a referee's decision</li>
+      </ul>` },
+  ],
+};
 
 const LEARN = {
   es: [
@@ -319,6 +406,7 @@ const state = {
   view: 'matches',
   selectedDate: null,
   selectedTeam: null,
+  fieldZone: null,
   activeTz: localStorage.getItem('wc.activeTz') || 'Europe/Madrid',
   customTzs: JSON.parse(localStorage.getItem('wc.customTzs') || '[]'),
   matches: [],
@@ -675,6 +763,196 @@ async function openMatchModal(idEvent) {
   box.innerHTML = html;
 }
 
+/* ===== CAMPO INTERACTIVO ===== */
+
+const FIELD_ZONES = [
+  {
+    id: 'porteria', color: '#1aa862',
+    es: { label: '🥅 Portería', title: '¿Cómo se marca un gol?', body: 'El balón debe cruzar completamente la línea de gol entre los postes y bajo el travesaño. La portería mide 7.32 m de ancho y 2.44 m de alto. La tecnología de línea de gol (GLT) confirma situaciones dudosas en milisegundos.' },
+    en: { label: '🥅 Goal', title: 'How to score a goal?', body: 'The ball must completely cross the goal line between the posts and under the crossbar. The goal is 7.32 m wide and 2.44 m tall. Goal-line technology (GLT) confirms close-call situations instantly.' },
+  },
+  {
+    id: 'area_meta', color: '#3b82f6',
+    es: { label: '📏 Área pequeña', title: 'Área de meta (6 yardas)', body: 'Rectángulo de 5.5 m × 18.32 m frente a cada portería. Los saques de puerta se lanzan desde cualquier punto dentro de esta área. El portero también recibe protección especial contra cargas físicas dentro de ella.' },
+    en: { label: '📏 Goal area', title: 'Goal area (6-yard box)', body: 'A 5.5 m × 18.32 m rectangle in front of each goal. Goal kicks are taken from anywhere inside this area. The goalkeeper also receives extra protection from physical challenges within it.' },
+  },
+  {
+    id: 'area_penal', color: '#f59e0b',
+    es: { label: '🤚 Área de penalti', title: 'Área de penalti (18 yardas)', body: 'Dentro de este rectángulo (40.32 m × 16.5 m) el portero puede tocar el balón con las manos. Si un defensor comete falta deliberada aquí, el rival recibe un penalti. El portero puede ser expulsado por derribar a un atacante con posibilidad clara de gol.' },
+    en: { label: '🤚 Penalty area', title: 'Penalty area (18-yard box)', body: 'Within this rectangle (40.32 m × 16.5 m) the goalkeeper may handle the ball. A deliberate foul by a defender here gives the opponent a penalty kick. The goalkeeper can be red-carded for denying a clear goal-scoring opportunity.' },
+  },
+  {
+    id: 'penalti', color: '#ef4444',
+    es: { label: '⚠️ Punto de penalti', title: 'El lanzamiento de penalti', body: 'Tiro desde 11 m, cara a cara con el portero. El portero debe quedarse en la línea de gol hasta que el jugador toque el balón. En alta competición se marcan ~78% de los penaltis. Si hay empate al final de la prórroga, una tanda de penaltis decide al clasificado.' },
+    en: { label: '⚠️ Penalty spot', title: 'The penalty kick', body: 'A one-on-one shot from 11 m. The goalkeeper must stay on the goal line until the ball is struck. About 78% of penalties are scored at elite level. If the match is level after extra time, a penalty shootout decides who advances.' },
+  },
+  {
+    id: 'centro', color: '#8b5cf6',
+    es: { label: '⭕ Centro', title: 'Saque de centro y círculo central', body: 'El partido comienza con un saque de centro y se repite tras cada gol y al inicio de cada tiempo. Todos los jugadores deben estar en su propia mitad. El círculo (radio 9.15 m) marca la distancia mínima que deben guardar los rivales durante el saque.' },
+    en: { label: '⭕ Centre', title: 'Kick-off and centre circle', body: 'The match begins with a kick-off, repeated after every goal and at the start of each half. All players must be in their own half. The circle (radius 9.15 m) marks the minimum distance opponents must keep during the kick-off.' },
+  },
+  {
+    id: 'banda', color: '#06b6d4',
+    es: { label: '↔️ Línea de banda', title: 'Saque de banda', body: 'Cuando el balón cruza una línea lateral, el equipo que lo tocó por último cede la posesión. El saque se lanza con ambas manos sobre la cabeza con al menos un pie en la línea o fuera del campo. No es posible marcar gol directamente desde un saque de banda.' },
+    en: { label: '↔️ Touchline', title: 'Throw-in', body: 'When the ball crosses a touchline, the team that last touched it loses possession. The throw must be taken with both hands over the head, with at least one foot on or behind the line. A goal cannot be scored directly from a throw-in.' },
+  },
+  {
+    id: 'esquina', color: '#f97316',
+    es: { label: '📐 Saque de esquina', title: 'Córner (saque de esquina)', body: 'Se concede cuando el balón sale por la línea de fondo tocado por último por un defensor. Se lanza desde el arco de esquina (radio 1 m). Es posible marcar directamente (gol olímpico). Los rivales deben estar a mínimo 9.15 m hasta que el balón esté en juego.' },
+    en: { label: '📐 Corner kick', title: 'Corner kick', body: 'Awarded when the ball goes over the goal line, last touched by a defender. Kicked from the corner arc (radius 1 m). A goal can be scored directly — known as an Olympic goal. Opponents must be at least 9.15 m away until the ball is in play.' },
+  },
+  {
+    id: 'fuera_juego', color: '#ec4899',
+    es: { label: '🚩 Fuera de juego', title: 'La regla del fuera de juego', body: 'Un atacante está en fuera de juego si, en el momento del pase, cualquier parte del cuerpo con la que puede marcar (excluido el brazo) está más cerca de la portería rival que el balón y el penúltimo defensor. No aplica en saques de esquina, de banda ni de puerta. El VAR usa líneas semiautomáticas para revisar posiciones.' },
+    en: { label: '🚩 Offside', title: 'The offside rule', body: 'An attacker is offside if, at the moment of the pass, any part of the body they can score with (excluding the arm) is closer to the opponent\'s goal line than both the ball and the second-to-last defender. Does not apply on corners, throw-ins, or goal kicks. VAR uses semi-automated offside lines to review positions.' },
+  },
+];
+
+function fieldScene(id) {
+  if (!id) return '';
+  const goalTxt = state.lang === 'es' ? '¡GOL!' : 'GOAL!';
+  const BLUE = '#2563eb', RED = '#dc2626', YGK = '#facc15';
+  const P = (x, y, color, cls = '') => `<circle cx="${x}" cy="${y}" r="6" fill="${color}" stroke="#fff" stroke-width="1.5" class="${cls}"/>`;
+  const B = (x, y, cls) => `<circle cx="${x}" cy="${y}" r="4" fill="#fff" stroke="#1f2937" stroke-width="1.2" class="${cls}"/>`;
+  const goalPop = (extra = '') => `
+    <rect x="410" y="126" width="9" height="27" fill="#1aa862" class="fs-goalflash ${extra}"/>
+    <text x="383" y="112" font-size="13" fill="#fff" text-anchor="middle" class="fs-goaltext ${extra}">${goalTxt}</text>`;
+
+  const scenes = {
+    porteria: `
+      ${P(345, 168, BLUE, 'fsg-shooter')}
+      ${P(403, 148, YGK, 'fsg-gk')}
+      ${B(352, 162, 'fsg-ball')}
+      ${goalPop()}`,
+    area_meta: `
+      ${P(297, 95, RED)}
+      ${P(320, 130, BLUE)}
+      ${P(404, 156, YGK, 'fsm-gk')}
+      ${B(396, 150, 'fsm-ball')}`,
+    area_penal: `
+      ${P(296, 44, BLUE)}
+      ${P(360, 110, RED)}
+      ${P(350, 152, BLUE)}
+      ${P(404, 140, YGK, 'fsa-gk')}
+      ${B(303, 49, 'fsa-ball')}
+      <text x="386" y="118" font-size="14" text-anchor="middle" class="fsa-hand">✋</text>`,
+    penalti: `
+      ${P(351, 153, BLUE, 'fsp-shooter')}
+      ${P(404, 140, YGK, 'fsp-gk')}
+      ${B(368, 140, 'fsp-ball')}
+      ${goalPop()}`,
+    centro: `
+      ${P(217, 133, BLUE, 'fsc-a')}
+      ${P(196, 160, BLUE)}
+      ${P(252, 120, RED)}
+      ${P(247, 166, RED)}
+      ${B(210, 140, 'fsc-ball')}`,
+    banda: `
+      ${P(244, 66, BLUE)}
+      ${P(268, 8, RED)}
+      ${P(300, 60, RED)}
+      ${B(250, 58, 'fsb-ball1')}
+      ${B(268, 14, 'fsb-ball2')}`,
+    esquina: `
+      ${P(413, 7, BLUE)}
+      ${P(366, 86, BLUE, 'fse-att')}
+      ${P(374, 104, RED)}
+      ${P(402, 140, YGK)}
+      ${B(407, 13, 'fse-ball')}
+      ${goalPop('fse-goal')}`,
+    fuera_juego: `
+      <line x1="330" y1="10" x2="330" y2="269" stroke="#ec4899" stroke-width="2" stroke-dasharray="6,4" opacity=".9"/>
+      ${P(400, 140, YGK)}
+      ${P(330, 108, RED)}
+      ${P(308, 192, RED)}
+      ${P(242, 172, BLUE)}
+      ${P(352, 118, BLUE)}
+      <circle cx="352" cy="118" r="11" fill="none" stroke="#ec4899" stroke-width="2.5" class="fso-mark"/>
+      ${B(250, 165, 'fso-ball')}
+      <text x="352" y="96" font-size="15" text-anchor="middle" class="fso-mark">🚩</text>`,
+  };
+  return scenes[id] ? `<g class="fs">${scenes[id]}</g>` : '';
+}
+
+function buildFieldSVG(activeId) {
+  const zone = FIELD_ZONES.find((z) => z.id === activeId);
+  const zc = zone ? zone.color : '#ffffff';
+
+  const hi = (id, alpha = 0.28) => {
+    if (id !== activeId) return 'rgba(255,255,255,0.06)';
+    return `${zc}${Math.round(alpha * 255).toString(16).padStart(2, '0')}`;
+  };
+
+  const stripes = Array.from({ length: 7 }, (_, i) =>
+    `<rect x="${10 + i * 57}" y="10" width="57" height="259" fill="${i % 2 ? '#226b2e' : '#1c5c26'}"/>`
+  ).join('');
+
+  return `<svg viewBox="0 0 420 279" xmlns="http://www.w3.org/2000/svg" class="field-svg" aria-hidden="true" style="pointer-events:none">
+  <rect width="420" height="279" fill="#1c5c26"/>
+  ${stripes}
+  <!-- zone highlights -->
+  <rect data-fzone="porteria"   x="1"   y="120" width="13"  height="39"  fill="${hi('porteria', 0.45)}" rx="1"/>
+  <rect data-fzone="porteria"   x="406" y="120" width="13"  height="39"  fill="${hi('porteria', 0.45)}" rx="1"/>
+  <rect data-fzone="area_meta"  x="10"  y="105" width="21"  height="70"  fill="${hi('area_meta')}"/>
+  <rect data-fzone="area_meta"  x="389" y="105" width="21"  height="70"  fill="${hi('area_meta')}"/>
+  <rect data-fzone="area_penal" x="10"  y="63"  width="63"  height="154" fill="${hi('area_penal')}"/>
+  <rect data-fzone="area_penal" x="347" y="63"  width="63"  height="154" fill="${hi('area_penal')}"/>
+  <circle data-fzone="penalti"  cx="52"  cy="140" r="13" fill="${hi('penalti', 0.45)}"/>
+  <circle data-fzone="penalti"  cx="368" cy="140" r="13" fill="${hi('penalti', 0.45)}"/>
+  <circle data-fzone="centro"   cx="210" cy="140" r="35" fill="${hi('centro')}"/>
+  <rect data-fzone="banda" x="10"  y="10"  width="400" height="18" fill="${hi('banda')}"/>
+  <rect data-fzone="banda" x="10"  y="251" width="400" height="18" fill="${hi('banda')}"/>
+  <rect data-fzone="esquina" x="10"  y="10"  width="22" height="22" fill="${hi('esquina', 0.45)}"/>
+  <rect data-fzone="esquina" x="388" y="10"  width="22" height="22" fill="${hi('esquina', 0.45)}"/>
+  <rect data-fzone="esquina" x="10"  y="247" width="22" height="22" fill="${hi('esquina', 0.45)}"/>
+  <rect data-fzone="esquina" x="388" y="247" width="22" height="22" fill="${hi('esquina', 0.45)}"/>
+  <!-- field lines -->
+  <rect x="10" y="10" width="400" height="259" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <line x1="210" y1="10" x2="210" y2="269" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <circle cx="210" cy="140" r="35" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <circle cx="210" cy="140" r="2"  fill="rgba(255,255,255,.85)"/>
+  <rect x="10"  y="63"  width="63" height="154" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <rect x="10"  y="105" width="21" height="70"  fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <circle cx="52" cy="140" r="2" fill="rgba(255,255,255,.85)"/>
+  <path d="M 73,112 A 35,35 0 0,1 73,168" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <rect x="347" y="63"  width="63" height="154" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <rect x="389" y="105" width="21" height="70"  fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <circle cx="368" cy="140" r="2" fill="rgba(255,255,255,.85)"/>
+  <path d="M 347,112 A 35,35 0 0,0 347,168" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <rect x="1"   y="126" width="9" height="27" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.85)" stroke-width="1.5"/>
+  <rect x="410" y="126" width="9" height="27" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.85)" stroke-width="1.5"/>
+  <path d="M 14,10  A 4,4 0 0,0 10,14"  fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <path d="M 406,10 A 4,4 0 0,1 410,14" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <path d="M 10,265 A 4,4 0 0,1 14,269" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  <path d="M 406,269 A 4,4 0 0,0 410,265" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/>
+  ${fieldScene(activeId)}
+</svg>`;
+}
+
+function renderFieldView() {
+  const az = state.fieldZone;
+  const zone = FIELD_ZONES.find((z) => z.id === az);
+  const pills = FIELD_ZONES.map((z) => {
+    const active = az === z.id ? ' active' : '';
+    const style = az === z.id ? ` style="border-color:${z.color};color:${z.color};background:${z.color}18"` : '';
+    return `<button class="fz-pill${active}" data-fzone="${z.id}"${style}>${z[state.lang].label}</button>`;
+  }).join('');
+
+  const info = zone
+    ? `<div class="fz-info" style="border-color:${zone.color}44">
+        <h3 class="fz-info-title" style="color:${zone.color}">${zone[state.lang].title}</h3>
+        <p class="fz-info-body">${zone[state.lang].body}</p>
+       </div>`
+    : `<p class="fz-hint">${t('fieldHint')}</p>`;
+
+  $('#view').innerHTML = `
+    <div class="field-view">
+      <div class="field-svg-wrap">${buildFieldSVG(az)}</div>
+      <div class="fz-pills">${pills}</div>
+      ${info}
+    </div>`;
+}
+
 /* ---------------- Tema claro / oscuro ---------------- */
 
 function applyTheme(theme) {
@@ -909,11 +1187,22 @@ function renderKnockoutView() {
 
 function renderLearnView() {
   const cards = LEARN[state.lang] || LEARN.es;
+  const news = NEW_RULES[state.lang] || NEW_RULES.es;
   $('#view').innerHTML = `
     <p class="learn-intro">${esc(t('learnIntro'))}</p>
+    <h2 class="learn-sec"><span class="new-badge">${esc(t('newBadge'))}</span>${esc(t('newRulesTitle'))}</h2>
+    <p class="learn-intro">${esc(t('newRulesIntro'))}</p>
     <div class="learn-grid">
-      ${cards.map((c, i) => `
-        <details class="learn-card" ${i === 0 ? 'open' : ''}>
+      ${news.map((c, i) => `
+        <details class="learn-card new-rule" ${i === 0 ? 'open' : ''}>
+          <summary><span class="emoji">${c.emoji}</span>${esc(c.title)}</summary>
+          <div class="learn-body">${c.body}</div>
+        </details>`).join('')}
+    </div>
+    <h2 class="learn-sec">${esc(t('classicRulesTitle'))}</h2>
+    <div class="learn-grid">
+      ${cards.map((c) => `
+        <details class="learn-card">
           <summary><span class="emoji">${c.emoji}</span>${esc(c.title)}</summary>
           <div class="learn-body">${c.body}</div>
         </details>`).join('')}
@@ -1053,6 +1342,7 @@ function closeModal() {
 function render() {
   applyI18nStatic();
   renderTzBar();
+  $('.tz-bar').classList.toggle('hidden', state.view !== 'matches');
   $('#langSelect').value = state.lang;
   document.querySelectorAll('.tab').forEach((b) => b.classList.toggle('active', b.dataset.view === state.view));
 
@@ -1066,6 +1356,7 @@ function render() {
   else if (state.view === 'groups') renderGroupsView();
   else if (state.view === 'knockout') renderKnockoutView();
   else if (state.view === 'learn') renderLearnView();
+  else if (state.view === 'field') renderFieldView();
   else renderTeamsView();
 }
 
@@ -1110,6 +1401,13 @@ function bindEvents() {
   });
 
   $('#view').addEventListener('click', (e) => {
+    const fzonePill = e.target.closest('[data-fzone]');
+    if (fzonePill) {
+      state.fieldZone = fzonePill.dataset.fzone === state.fieldZone ? null : fzonePill.dataset.fzone;
+      renderFieldView();
+      return;
+    }
+
     const datePill = e.target.closest('.date-pill');
     if (datePill) { state.selectedDate = datePill.dataset.date; renderMatchesView(); return; }
 
