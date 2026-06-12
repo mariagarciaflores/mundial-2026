@@ -246,7 +246,15 @@ main { padding: 10px 22px 40px; max-width: 1180px; margin: 0 auto; }
 .bio-loading { color: var(--text-dim); font-style: italic; }
 .bio-link { color: var(--accent); font-size: .8rem; }
 
-.footer { text-align: center; color: var(--text-dim); font-size: .75rem; padding: 18px; border-top: 1px solid var(--border); }
+.footer { text-align: center; color: var(--text-dim); font-size: .75rem; padding: 18px 12px; border-top: 1px solid var(--border); line-height: 2; }
+.footer-links { margin: 4px 0 0; }
+.footer-repo-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  color: var(--text-dim); text-decoration: none; font-size: .75rem;
+  border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+  transition: color .12s, border-color .12s;
+}
+.footer-repo-link:hover { color: var(--text); border-color: var(--accent); }
 
 /* ===== Chips de eventos en las tarjetas de partido ===== */
 .events-row { display: flex; gap: 6px; flex-wrap: wrap; }

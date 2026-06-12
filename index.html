@@ -1,10 +1,78 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mundial 2026 · Calendario, Resultados y Plantillas</title>
-<meta name="description" content="Copa Mundial de la FIFA 2026: partidos por día en hora de España, Bolivia y más países, resultados en vivo, clasificaciones y plantillas completas.">
+
+<!-- ===== SEO primario ===== -->
+<title>Mundial 2026 · Partidos, Resultados en Vivo, Clasificaciones y Plantillas</title>
+<meta name="description" content="Sigue la Copa Mundial de la FIFA 2026 en vivo: partidos por día en hora de España y Bolivia, resultados, goles, tarjetas, clasificaciones de los 12 grupos, plantillas de los 48 equipos y guía para aprender fútbol.">
+<meta name="keywords" content="mundial 2026, FIFA World Cup 2026, partidos mundial 2026, resultados mundial, clasificaciones mundial 2026, plantillas selecciones, horario españa, horario bolivia, Canada Mexico USA 2026">
+<meta name="author" content="mariagarciaflores">
+<link rel="canonical" href="https://mundial2026.app/">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<!-- ===== Open Graph (Facebook, WhatsApp, Telegram) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mundial2026.app/">
+<meta property="og:title" content="Mundial 2026 · Partidos, Resultados y Clasificaciones en Vivo">
+<meta property="og:description" content="Sigue el Mundial 2026 en vivo: partidos por día en hora de España y Bolivia, goles y tarjetas en tiempo real, clasificaciones de los 12 grupos y plantillas de los 48 equipos.">
+<meta property="og:image" content="https://mundial2026.app/icons/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mundial 2026 · Copa del Mundo">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Mundial 2026">
+
+<!-- ===== Twitter / X Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://mundial2026.app/">
+<meta name="twitter:title" content="Mundial 2026 · Partidos, Resultados y Clasificaciones en Vivo">
+<meta name="twitter:description" content="Sigue el Mundial 2026 en vivo: partidos en hora de España y Bolivia, goles y tarjetas en tiempo real, clasificaciones de los 12 grupos.">
+<meta name="twitter:image" content="https://mundial2026.app/icons/og-image.png">
+
+<!-- ===== Datos estructurados JSON-LD ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Mundial 2026",
+  "url": "https://mundial2026.app/",
+  "description": "Calendario, resultados en vivo, clasificaciones y plantillas de la Copa Mundial de la FIFA 2026.",
+  "inLanguage": ["es", "en"],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://mundial2026.app/",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Copa Mundial de la FIFA 2026",
+  "alternateName": "FIFA World Cup 2026",
+  "startDate": "2026-06-11",
+  "endDate": "2026-07-19",
+  "location": {
+    "@type": "Place",
+    "name": "Canadá, México y Estados Unidos",
+    "address": "North America"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "FIFA",
+    "url": "https://www.fifa.com"
+  },
+  "url": "https://mundial2026.app/",
+  "description": "La Copa Mundial de la FIFA 2026 se celebra en Canadá, México y Estados Unidos con 48 selecciones repartidas en 12 grupos."
+}
+</script>
+
+<!-- ===== PWA ===== -->
 <link rel="icon" href="icons/icon-192.png" type="image/png">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b1120">
@@ -13,7 +81,12 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mundial 2026">
+
+<!-- ===== Performance ===== -->
 <link rel="preconnect" href="https://www.thesportsdb.com">
+<link rel="preconnect" href="https://r2.thesportsdb.com">
+<link rel="preconnect" href="https://en.wikipedia.org">
+<link rel="dns-prefetch" href="https://site.api.espn.com">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -67,6 +140,12 @@
 
 <footer class="footer">
   <p data-i18n="footer">Datos: TheSportsDB y Wikipedia · Actualización automática cada 60 segundos · Hecho con ❤️ para el Mundial 2026</p>
+  <p class="footer-links">
+    <a href="https://github.com/mariagarciaflores/mundial-2026" target="_blank" rel="noopener" class="footer-repo-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      <span data-i18n="footerRepo">Código en GitHub</span>
+    </a>
+  </p>
 </footer>
 
 <script src="js/app.js"></script>
