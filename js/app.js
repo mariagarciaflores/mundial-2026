@@ -420,6 +420,20 @@ const $ = (sel) => document.querySelector(sel);
 const t = (key) => (I18N[state.lang] && I18N[state.lang][key]) || I18N.es[key] || key;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
+/* ---------------- Analytics (Firebase, opcional) ----------------
+   La config la inyecta Firebase Hosting vía /__/firebase/init.js;
+   en local o si Analytics no está habilitado, track() no hace nada. */
+let _analytics = null;
+function track(name, params = {}) {
+  if (_analytics === false) return;
+  if (_analytics === null) {
+    try {
+      _analytics = (window.firebase && firebase.apps && firebase.apps.length && firebase.analytics) ? firebase.analytics() : false;
+    } catch { _analytics = false; }
+  }
+  if (_analytics) { try { _analytics.logEvent(name, params); } catch { /* sin conexión o bloqueado */ } }
+}
+
 /* ---------------- Utilidades de tiempo ---------------- */
 
 function matchDateUTC(m) {
@@ -964,6 +978,7 @@ function applyTheme(theme) {
 function toggleTheme() {
   state.theme = state.theme === 'dark' ? 'light' : 'dark';
   localStorage.setItem('wc.theme', state.theme);
+  track('toggle_theme', { theme: state.theme });
   applyTheme(state.theme);
 }
 
@@ -1366,12 +1381,14 @@ function bindEvents() {
   document.querySelectorAll('.tab').forEach((b) => b.addEventListener('click', () => {
     state.view = b.dataset.view;
     if (state.view !== 'teams') state.selectedTeam = null;
+    track('view_tab', { tab: state.view });
     render();
   }));
 
   $('#langSelect').addEventListener('change', (e) => {
     state.lang = e.target.value;
     localStorage.setItem('wc.lang', state.lang);
+    track('change_language', { lang: state.lang });
     render();
   });
 
@@ -1404,6 +1421,7 @@ function bindEvents() {
     const fzonePill = e.target.closest('[data-fzone]');
     if (fzonePill) {
       state.fieldZone = fzonePill.dataset.fzone === state.fieldZone ? null : fzonePill.dataset.fzone;
+      if (state.fieldZone) track('view_field_zone', { zone: state.fieldZone });
       renderFieldView();
       return;
     }
@@ -1412,7 +1430,11 @@ function bindEvents() {
     if (datePill) { state.selectedDate = datePill.dataset.date; renderMatchesView(); return; }
 
     const playerCard = e.target.closest('.player-card');
-    if (playerCard) { openPlayerModal(playerCard.dataset.player, playerCard.dataset.team); return; }
+    if (playerCard) {
+      track('view_player', { player: playerCard.dataset.player, team: playerCard.dataset.team });
+      openPlayerModal(playerCard.dataset.player, playerCard.dataset.team);
+      return;
+    }
 
     if (e.target.closest('#backTeams')) { state.selectedTeam = null; render(); return; }
 
@@ -1420,13 +1442,14 @@ function bindEvents() {
     if (teamEl) {
       state.selectedTeam = teamEl.dataset.team;
       state.view = 'teams';
+      track('view_team', { team: state.selectedTeam });
       render();
       window.scrollTo({ top: 0 });
       return;
     }
 
     const card = e.target.closest('.match-card[data-event]');
-    if (card) openMatchModal(card.dataset.event);
+    if (card) { track('view_match', { event_id: card.dataset.event }); openMatchModal(card.dataset.event); }
   });
 
   $('#modal').addEventListener('click', (e) => {
@@ -1462,6 +1485,7 @@ function setupPwa() {
   window.addEventListener('appinstalled', () => {
     btn.classList.add('hidden');
     deferredInstallPrompt = null;
+    track('pwa_installed');
   });
 
   // iOS no dispara beforeinstallprompt: mostramos una pista una sola vez

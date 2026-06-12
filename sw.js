@@ -2,7 +2,7 @@
    Estrategia: red primero con respaldo en caché (la app siempre muestra datos
    frescos cuando hay conexión y sigue funcionando sin internet con lo último visto). */
 
-const VERSION = '20260612';
+const VERSION = '20260612-2';
 const CACHE = `mundial2026-${VERSION}`;
 
 const SHELL = [
